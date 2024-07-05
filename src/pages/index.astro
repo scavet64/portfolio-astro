@@ -4,23 +4,22 @@ import Section from "../components/Section.astro";
 import Card from "../components/Card.astro";
 import ProjectCard from "../components/ProjectCard.astro";
 import SkillLayout from "../components/SkillLayout.astro";
+import { type ProjectMetaData } from "../types";
 
 import { Image } from "astro:assets";
-import astro from "../assets/about-astro.png";
 import logo from "../assets/scavettapps-logo.svg";
 import Label from "../components/Label.astro";
 
-import supernova from "../assets/icons/supernovaMaybe.svg";
-import animalCrossing from "../assets/icons/animal-crossing.svg";
-import incrediball from "../assets/icons/beach-ball.svg";
-
-import noisebean from "../assets/icons/noisebean.png";
-import checkers from "../assets/icons/checkers.png";
-import win32Helper from "../assets/icons/win32-library.png";
-
 const languages = ["C#", "Java", "Typescript", "Javascript", "Python", "SQL"];
-const frontend = ["React", "Redux-Saga", "React Native", "GatsbyJS", "Astro"];
-const desktop = ["Electron", "Maui", "XAML", "WPF"];
+const frontend = [
+  "React",
+  "Redux-Saga",
+  "React Native",
+  "Angular",
+  "GatsbyJS",
+  "Astro",
+];
+const desktop = ["Electron", "Maui", "WPF", "NiceGUI", "PyQt"];
 const backend = [
   "Dotnet",
   "Entity Framework",
@@ -40,6 +39,88 @@ const tools = [
   "Stable Diffusion",
 ];
 const others = ["Docker", "FFMPEG", "CUDA", "Git"];
+
+const projectMetadata: ProjectMetaData[] = [
+  {
+    title: "Gameloggr",
+    description: `Webapp to track your video game backlog. Serverless API developed using dotnet deployed to AWS Lambda. Data stored in a Postgres database.`,
+    imagePath: "/src/assets/icons/gamedb-1024x1024.png",
+    altText: "Example",
+    customStyle: "background-color: #450091;  object-fit:cover",
+  },
+  {
+    title: "Media Organizer + Streamer",
+    description: `Tag based organization with ability to stream media across a network to any modern browser. Uses FFMPEG to transcode videos into an HLS segmented format to stream and encode asynchronously.`,
+    imagePath: "/src/assets/icons/organizer-1024x1024.png",
+    altText: "Example",
+    customStyle: "background-color: #450091; object-fit:cover",
+  },
+  {
+    title: "Animal Crossing Critters",
+    description: `Help keep track and fill out your Animal Crossing New Horizons Critterpedia by using this tracker to see which critters you have captured and see when each critter is available.`,
+    imagePath: "/src/assets/icons/animal-crossing.svg",
+    altText: "Example",
+    customStyle: "background-color: #54db00",
+    href: "https://animalcrossing.scavettapps.com",
+  },
+  {
+    title: "SuperNova: Escape!",
+    description: `Tap to escape the trailing super nova in this endless arcade classic! Carefully avoid the asteroids floating in space without slowing down... Tap too slowly and the super nova will surly catch up!`,
+    imagePath: "/src/assets/icons/supernova.svg",
+    altText: "Example",
+    customStyle: "background-color: #1FA7E0",
+  },
+  {
+    title: "Incrediball",
+    description: `Incrediball is the most incredible endless rolling ball experience. Steer the ball left and right on randomly generated paths to show your friends that you are truly incrediball.`,
+    imagePath: "/src/assets/icons/beach-ball.svg",
+    altText: "Example",
+    customStyle: "background-color: wheat",
+  },
+  {
+    title: "NoiseBean",
+    description: `Personal Discord bot powered by JDA, Spring Boot, and Spring Data JPA. Its can play music from YouTube or act as a soundboard with uploaded files. It also can run private polls, and keep track game play times to collect statistics that players can later view.`,
+    imagePath: "/src/assets/icons/noisebean.png",
+    altText: "Example",
+    customStyle: "background-color: #5261F7;",
+  },
+  {
+    title: "Checkers Minimax",
+    description: `A full implementation in the Dotnet framework of a playable checkers game against a computer opponent. The artificial intelligence uses the Minimax algorithm to strategize and determine optimal moves based on genetically determined heuristics.`,
+    imagePath: "/src/assets/icons/checkers.png",
+    altText: "Example",
+    customStyle: "background-color: #e1afaf;",
+  },
+  {
+    title: "Win32ApiHelper",
+    description: `This library was created to assist me in some of my other projects where I required the use of windows specific API functions. The main function of this library is the concept of impersonation and launching processes from a windows service.`,
+    imagePath: "/src/assets/icons/win32-library.png",
+    altText: "Example",
+    customStyle: "background-color: #7384cb;",
+  },
+];
+
+const biomemeExperienceBullets: string[] = [
+  `Led development of the backend architecture, API, and database for an intuitive online interface enabling employers to schedule medically diagnostic tests for their employees, increasing the overall efficiency for labs and employers.`,
+  `Contributed to several React webapps and React Native (Android) applications that interacted with a backend API and AWS.`,
+  `Created comprehensive Figma diagrams and mockups, shaping the implementation of new features and User Experience.`,
+  `Managed a variety of AWS services, including Lambda, ECS, API Gateway, RDS, IAM, Cognito, CloudWatch, CloudFormation, and S3, to build secure, scalable, and highly available cloud-based solutions for several of our projects.`,
+  `Automated build and deployment processes using CircleCI, reducing time to deployment and enhancing overall efficiency.`,
+  `Prioritized feature requests and addressed issues by leveraging data from tools like Sentry, CloudWatch, and Snyk.`,
+  `Utilized Jira to manage project tasks, stories, and sprints, ensuring team alignment and effective progress tracking.`,
+  `Provided mentorship, guidance, and knowledge to junior team members, contributing to their professional development.`,
+  `Earned a promotion to Seniority Level III by consistently surpassing role expectations, as recognized by management.`,
+];
+
+const gnostechExperienceBullets: string[] = [
+  `Led the design, development, and deployment of a microservice oriented architecture built upon DevOps principles utilizing AWS, Docker, Kubernetes, Terraform (Infrastructure as code), Gitlab CI/CD, and Spring Boot Cloud.`,
+  `Created a developer toolkit that significantly increased productivity, resulting in faster development time.`,
+  `Major Contributor and developer to the cloud-based patch management solution deployed and used by the US Navy.`,
+  `Spearheaded the design and development of a help desk management system with video streaming capabilities.`,
+  `Full-stack development on several applications leveraging Java 11, Spring Boot, MySQL, C#, WPF, Angular, Typescript, JSON.`,
+  `Identified and delivered a critical enhancement to the application, greatly improving security and stability.`,
+  `Interviewed and evaluated candidates for the software development team and mentored other members of the team.`,
+];
 ---
 
 <style>
@@ -52,12 +133,7 @@ const others = ["Docker", "FFMPEG", "CUDA", "Git"];
     color: hsl(var(--foreground));
   }
 
-  .text-muted-foreground {
-    --tw-text-opacity: 1;
-    color: hsl(var(--muted-foreground) / var(--tw-text-opacity));
-  }
-
-  .margin-0 {
+  .about {
     margin: 0px;
   }
 
@@ -129,7 +205,7 @@ const others = ["Docker", "FFMPEG", "CUDA", "Git"];
     width: 1.25rem;
   }
   .muted-foreground-color {
-    color: hsl(var(--muted-foreground) / 75%);
+    color: hsl(var(--muted-foreground));
   }
 </style>
 <Layout title="Vincent Scavetta - Resume">
@@ -208,19 +284,18 @@ const others = ["Docker", "FFMPEG", "CUDA", "Git"];
       </div>
     </section>
 
-    <Section title="About">
-      <p class="text-muted-foreground margin-0">
-        As a seasoned Full-Stack Software Engineer with expertise in developing
-        secure cloud and client based applications, I have honed my skills on a
-        variety of projects, both small and complex. Driven by a passion for
-        innovation, I continually strive to stay ahead of the curve by keeping
-        up with the latest programming languages and technologies. Whether it's
-        discovering new techniques to improve code efficiency or implementing
-        cutting-edge features, I am dedicated to taking my projects and dream
-        ideas to the next level. When not immersed in programming, I enjoy
-        playing video games and following my favorite content creators on Twitch
-        and YouTube, keeping up with the latest trends and developments in the
-        industry.
+    <Section title="About Me">
+      <p class="muted-foreground-color about">
+        I'm a true Full-Stack Software Engineer with a knack for building secure
+        cloud and client-based applications. Over the years, I've tackled a
+        range of projects, from simple to complex, and have fine-tuned my skills
+        along the way. I'm passionate about innovation and always on the lookout
+        for the latest frameworks and technologies to stay ahead of the curve. I
+        love finding new ways to make code more efficient and bringing fresh
+        ideas to life. My favorite part of programming is taking a random
+        problem I may run into and spending hours hacking away to solve it. When
+        I'm not coding, you'll find me playing video games or catching up with
+        my favorite content creators on Twitch and YouTube, or producing music!
       </p>
     </Section>
 
@@ -233,47 +308,8 @@ const others = ["Docker", "FFMPEG", "CUDA", "Git"];
         imageClass="h-12 w-auto md:-left-16"
         imagePath="/src/assets/biomeme_inc_logo.jpg"
       >
-        <ul class="experience-list text-muted-foreground">
-          <li>
-            Led development of the backend architecture, API, and database for
-            an intuitive online interface enabling employers to schedule
-            medically diagnostic tests for their employees, increasing the
-            overall efficiency for labs and employers.
-          </li>
-          <li>
-            Contributed to several React webapps and React Native (Android)
-            applications that interacted with a backend API and AWS.
-          </li>
-          <li>
-            Created comprehensive Figma diagrams and mockups, shaping the
-            implementation of new features and User Experience.
-          </li>
-          <li>
-            Managed a variety of AWS services, including Lambda, ECS, API
-            Gateway, RDS, IAM, Cognito, CloudWatch, CloudFormation, and S3, to
-            build secure, scalable, and highly available cloud-based solutions
-            for several of our projects.
-          </li>
-          <li>
-            Automated build and deployment processes using CircleCI, reducing
-            time to deployment and enhancing overall efficiency.
-          </li>
-          <li>
-            Prioritized feature requests and addressed issues by leveraging data
-            from tools like Sentry, CloudWatch, and Snyk.
-          </li>
-          <li>
-            Utilized Jira to manage project tasks, stories, and sprints,
-            ensuring team alignment and effective progress tracking.
-          </li>
-          <li>
-            Provided mentorship, guidance, and knowledge to junior team members,
-            contributing to their professional development.
-          </li>
-          <li>
-            Earned a promotion to Seniority Level III by consistently surpassing
-            role expectations, as recognized by management.
-          </li>
+        <ul class="experience-list muted-foreground-color">
+          {biomemeExperienceBullets.map((bullet: string) => <li>{bullet}</li>)}
         </ul>
       </Card>
 
@@ -285,37 +321,8 @@ const others = ["Docker", "FFMPEG", "CUDA", "Git"];
         imageClass="h-12 w-auto md:-left-16"
         imagePath="/src/assets/Fy1hsLPD_400x400.jpg"
       >
-        <ul class="experience-list text-muted-foreground">
-          <li>
-            Led the design, development, and deployment of a microservice
-            oriented architecture built upon DevOps principles utilizing AWS,
-            Docker, Kubernetes, Terraform (Infrastructure as code), Gitlab
-            CI/CD, and Spring Boot Cloud.
-          </li>
-          <li>
-            Created a developer toolkit that significantly increased
-            productivity, resulting in faster development time.
-          </li>
-          <li>
-            Major Contributor and developer to the cloud-based patch management
-            solution deployed and used by the US Navy.
-          </li>
-          <li>
-            Spearheaded the design and development of a help desk management
-            system with video streaming capabilities.
-          </li>
-          <li>
-            Full-stack development on several applications leveraging Java 11,
-            Spring Boot, MySQL, C#, WPF, Angular, Typescript, JSON.
-          </li>
-          <li>
-            Identified and delivered a critical enhancement to the application,
-            greatly improving security and stability.
-          </li>
-          <li>
-            Interviewed and evaluated candidates for the software development
-            team and mentored other members of the team.
-          </li>
+        <ul class="experience-list muted-foreground-color">
+          {gnostechExperienceBullets.map((bullet: string) => <li>{bullet}</li>)}
         </ul>
       </Card>
     </Section>
@@ -325,83 +332,26 @@ const others = ["Docker", "FFMPEG", "CUDA", "Git"];
       <SkillLayout title="Frontend" skills={frontend} />
       <SkillLayout title="Desktop" skills={desktop} />
       <SkillLayout title="Backend" skills={backend} />
+      <SkillLayout title="Cloud" skills={cloud} />
       <SkillLayout title="Tools" skills={tools} />
       <SkillLayout title="Others" skills={others} />
     </Section>
 
     <Section title="Projects">
       <div class="project-container">
-        <ProjectCard
-          heading="Gameloggr"
-          subheading="Webapp to track your video game backlog. Serverless API developed using dotnet deployed to AWS Lambda. Data stored in a Postgres database."
-          imagePath="/src/assets/icons/gamedb-1024x1024.png"
-          altText="Example"
-          class="project-image"
-          style="background-color: #450091;  object-fit:cover"
-        />
-        <ProjectCard
-          heading="Media Organizer + Streamer"
-          subheading="Tag based organization with ability to stream media across a network to any modern browser. Uses FFMPEG to transcode videos into an HLS segmented format to stream and encode asynchronously."
-          imagePath="/src/assets/icons/organizer-1024x1024.png"
-          altText="Example"
-          class="project-image"
-          style="background-color: #450091; object-fit:cover"
-        />
-        <ProjectCard
-          href="https://animalcrossing.scavettapps.com/"
-          heading="Animal Crossing Critters"
-          subheading="Help keep track and fill out your Animal Crossing New Horizons Critterpedia by using this tracker to see which critters you have captured and see when each critter is available."
-          imagePath="/src/assets/icons/animal-crossing.svg"
-          altText="Example"
-          class="project-image"
-          style="background-color: #54db00"
-        />
-        <ProjectCard
-          as="div"
-          heading="SuperNova: Escape!"
-          subheading="Tap to escape the trailing super nova in this endless arcade classic! Carefully avoid the asteroids floating in space without slowing down... Tap too slowly and the super nova will surly catch up!"
-          imagePath="/src/assets/icons/supernova.svg"
-          altText="Lorem, ipsum dolor sit"
-          class="project-image"
-          style="background-color: #1FA7E0"
-        />
-        <ProjectCard
-          as="div"
-          heading="Incrediball"
-          subheading="Incrediball is the most incredible endless rolling ball experience. Steer the ball left and right on randomly generated paths to show your friends that you are truly incrediball."
-          imagePath="/src/assets/icons/beach-ball.svg"
-          altText="Lorem, ipsum dolor sit"
-          class="project-image"
-          style="background-color: wheat;"
-        />
-        <ProjectCard
-          as="div"
-          heading="NoiseBean"
-          subheading="Personal Discord bot powered by JDA, Spring Boot, and Spring Data JPA. Its can play music from YouTube or act as a soundboard with uploaded files. It also can run private polls, and keep track game play times to collect statistics that players can later view."
-          imagePath="/src/assets/icons/noisebean.png"
-          altText="Lorem, ipsum dolor sit"
-          class="project-image"
-          style="background-color: #5261F7;"
-        />
-        <ProjectCard
-          as="div"
-          heading="Checkers Minimax"
-          subheading="A full implementation in the Dotnet framework of a playable checkers game against a computer opponent. The artificial intelligence uses the Minimax algorithm to strategize and determine optimal moves based on genetically determined heuristics"
-          imagePath="/src/assets/icons/checkers.png"
-          altText="Lorem, ipsum dolor sit"
-          class="project-image"
-          ,
-          style="background-color: #e1afaf;"
-        />
-        <ProjectCard
-          as="div"
-          heading="Win32ApiHelper"
-          subheading="This library was created to assist me in some of my other projects where I required the use of windows specific API functions. The main function of this library is the concept of impersonation and launching processes from a windows service."
-          imagePath="/src/assets/icons/win32-library.png"
-          altText="Lorem, ipsum dolor sit"
-          class="project-image"
-          style="background-color: #7384cb;"
-        />
+        {
+          projectMetadata.map((project: ProjectMetaData) => (
+            <ProjectCard
+              heading={project.title}
+              subheading={project.description}
+              imagePath={project.imagePath}
+              altText={project.altText}
+              class="project-image"
+              style={project.customStyle}
+              href={project.href}
+            />
+          ))
+        }
       </div>
     </Section>
 
@@ -414,7 +364,7 @@ const others = ["Docker", "FFMPEG", "CUDA", "Git"];
         imagePath="/src/assets/rowan-university-profs-seeklogo.svg"
         imageClass="h-12 w-auto md:-left-16"
       >
-        <ul class="experience-list text-muted-foreground">
+        <ul class="experience-list muted-foreground-color">
           <li>Graduated with Magna Cum Laude Honors</li>
           <li>
             Completed coursework in advanced algorithms, operating systems,
@@ -438,10 +388,10 @@ const others = ["Docker", "FFMPEG", "CUDA", "Git"];
         altText="Lorem, ipsum dolor sit"
         imageClass="h-12 w-auto md:-left-16"
       >
-        <ul class="experience-list text-muted-foreground">
+        <ul class="experience-list muted-foreground-color">
           <li>Minored in computer science and chemistry</li>
           <li>Ecological Individual Based Model Developer</li>
-          <ul class="sub-list text-muted-foreground">
+          <ul class="sub-list muted-foreground-color">
             <li>
               Faculty supported, independent research on the endangered seagrass <i
                 >Halophila johnsonii</i
@@ -456,7 +406,7 @@ const others = ["Docker", "FFMPEG", "CUDA", "Git"];
             </li>
           </ul>
           <li>Artificial Intelligence Developer</li>
-          <ul class="sub-list text-muted-foreground">
+          <ul class="sub-list muted-foreground-color">
             <li>
               Developed and implemented a minimax inspired algorithm into a
               unique card based game
