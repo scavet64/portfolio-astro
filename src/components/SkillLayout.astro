@@ -1,0 +1,43 @@
+---
+import Button from "./Button.astro";
+const { title, skills } = Astro.props;
+---
+
+<style>
+  .skill-layout-container {
+    display: flex;
+    flex-direction: column;
+    row-gap: 0.5rem;
+
+    @media (min-width: 768px) {
+      flex-direction: row;
+      column-gap: 1.25rem;
+      row-gap: 0;
+    }
+
+    .skill-title {
+      width: 20%;
+      font-weight: 500;
+	  color: hsl(var(--foreground));
+    }
+
+    .skill-button-container {
+      display: flex;
+      width: 80%;
+      flex-direction: row;
+      flex-wrap: wrap;
+      column-gap: 1rem;
+      row-gap: 0.5rem;
+    }
+  }
+</style>
+<div class="skill-layout-container">
+  <div class="skill-title">{title}</div>
+  <div class="skill-button-container">
+    {
+      skills.map((skill: string[]) => (
+        <Button as="button" title={skill} style="pill" />
+      ))
+    }
+  </div>
+</div>

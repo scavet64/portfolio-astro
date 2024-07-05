@@ -1,0 +1,13 @@
+---
+const { class: className, title } = Astro.props
+import "./Section.scss";
+---
+
+<section class='section-container'>
+	<div class='section-title'>
+		{title}
+	</div>
+	<div class='section-content '>
+		<slot />
+	</div>
+</section>

@@ -1,0 +1,36 @@
+---
+const {
+  class: className,
+  as: Tag = "div",
+  title,
+  href,
+  ...props
+} = Astro.props;
+
+const tagStyles = ["label-container"];
+if (href) {
+  tagStyles.push("label-container-link");
+}
+const tagClasses = tagStyles.join(" ");
+---
+
+<style>
+  .label-container {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+  }
+
+  .label-container-link {
+    transition: opacity 0.3s;
+    &:hover {
+      opacity: 0.75;
+    }
+  }
+</style>
+<Tag class={tagClasses} href={href} {...props}>
+  <slot name="icon" />
+  <p>{title}</p>
+</Tag>
