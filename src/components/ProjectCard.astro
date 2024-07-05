@@ -105,14 +105,15 @@ if (!images[imagePath]){
   }
 </style>
 <Tag class={"tag " + (href ? " clickable-tag" : '')} href={href}>
-	<div style={style} >
+	<!-- <div style={style} > -->
 		<Image
 		src={images[imagePath]()}
 		alt={altText}
 		class="image"
 		loading="eager"
+		style={style}
 	  />
-	</div>
+	<!-- </div> -->
 
   <div class="tag-container">
 	<div class="tag-header-container">

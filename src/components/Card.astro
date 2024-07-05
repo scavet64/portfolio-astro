@@ -14,7 +14,7 @@ const {
   imageClass,
 } = Astro.props;
 const images = import.meta.glob<{ default: ImageMetadata }>(
-  "/src/assets/*.{jpeg,jpg,png,gif}"
+  "/src/assets/*.{jpeg,jpg,png,gif,svg}"
 );
 
 if (imagePath) {
@@ -26,9 +26,9 @@ if (imagePath) {
 ---
 
 <style>
-	h1{
-		margin:0px;
-	}
+  h1 {
+    margin: 0px;
+  }
   .tag {
     position: relative;
     border-radius: 1rem;
@@ -43,21 +43,31 @@ if (imagePath) {
   }
 
   .image {
-    margin-bottom: 0.75rem;
-    height: 3rem;
-    width: auto;
+    height: 4rem;
+    width: 4rem;
+    object-fit: fill;
 
     @media (min-width: 768px) {
       position: absolute;
       margin-bottom: 0;
-      left: -4rem;
     }
   }
 
-  .my-class {
-    margin-left: 1rem;
-    list-style-type: disc;
-    color: hsl(var(--muted-foreground));
+  .image-container{
+	border-radius: 100%;
+    width: 4rem;
+    height: 4rem;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	margin-bottom: 0.75rem;
+	overflow: hidden;
+
+    @media (min-width: 768px) {
+      position: absolute;
+      margin-bottom: 0;
+      left: -6rem;
+    }
   }
 
   .tag-container {
@@ -76,6 +86,7 @@ if (imagePath) {
       }
 
       .sub-heading {
+        font-size: medium;
         color: hsl(var(--muted-foreground));
       }
     }
@@ -84,12 +95,14 @@ if (imagePath) {
 <Tag class={"tag" + " " + className} href={href}>
   {
     imagePath && (
-      <Image
-        src={images[imagePath]()}
-        alt={altText}
-        class={"image" + " " + imageClass}
-        loading="eager"
-      />
+      <div class="image-container">
+        <Image
+          src={images[imagePath]()}
+          alt={altText}
+          class={"image" + " " + imageClass}
+          loading="eager"
+        />
+      </div>
     )
   }
   <div class="tag-container">
