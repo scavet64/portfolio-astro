@@ -1,0 +1,53 @@
+---
+const {
+  as: Tag = "a",
+  class: className,
+  title,
+  href,
+  style = "button",
+} = Astro.props;
+
+const tagStyles = ["tag-button"];
+if (href) {
+  tagStyles.push("clickable");
+}
+if (style === "pill") {
+  tagStyles.push("pill");
+}
+const tagClasses = tagStyles.join(" ");
+---
+
+<style>
+  .clickable {
+    cursor: pointer;
+  }
+
+  .tag-button {
+    display: inline-flex;
+    align-items: center;
+    column-gap: 0.25rem;
+    border-radius: 0.5rem;
+    background-color: hsl(var(--primary-foreground));
+    border: 1px solid hsl(var(--border));
+    padding-left: 0.5rem;
+    padding-right: 0.5rem;
+    padding-top: 0.25rem;
+    padding-bottom: 0.25rem;
+    font-size: 0.875rem;
+    transition: all 0.3s;
+    line-height: 1.25rem;
+
+    &:hover {
+      background-color: hsl(var(--input));
+    }
+  }
+
+  .pill {
+    border-radius: 0.75rem;
+  }
+</style>
+<Tag class={tagClasses} href={href} data-astro-prefetch>
+  <slot name="icon-before" />
+  <div>{title}</div>
+  <slot name="icon-after" />
+</Tag>
