@@ -1,13 +1,43 @@
 ---
-const { class: className, title } = Astro.props
-import "./Section.scss";
+const { class: className, title } = Astro.props;
 ---
 
-<section class='section-container'>
-	<div class='section-title'>
-		{title}
-	</div>
-	<div class='section-content '>
-		<slot />
-	</div>
+<style>
+  .section-container {
+    display: flex;
+    flex-direction: column;
+    row-gap: 1.25rem;
+    @media (min-width: 768px) {
+      flex-direction: row;
+    }
+  }
+
+  .section-title {
+    font-size: 1.25rem;
+    line-height: 1.75rem;
+    font-weight: 600;
+
+    @media (min-width: 768px) {
+      width: 33.333333%;
+    }
+  }
+
+  .section-content {
+    display: flex;
+    flex-direction: column;
+    row-gap: 0.75rem;
+
+    @media (min-width: 768px) {
+      width: 66.666667%;
+    }
+  }
+</style>
+
+<section class="section-container">
+  <div class="section-title">
+    {title}
+  </div>
+  <div class="section-content">
+    <slot />
+  </div>
 </section>
