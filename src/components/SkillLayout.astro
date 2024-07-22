@@ -36,10 +36,14 @@ const { title, skills } = Astro.props;
       width: 90%;
       flex-direction: row;
       flex-wrap: wrap;
-      column-gap: 1rem;
-      row-gap: 0.5rem;
+      column-gap: 0.25rem;
+      row-gap: 0.25rem;
+      justify-content: center;
       @media (min-width: 768px) {
         width: 85%;
+        column-gap: 0.5rem;
+        row-gap: 0.5rem;
+        justify-content: start;
       }
     }
   }
