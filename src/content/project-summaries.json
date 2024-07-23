@@ -1,0 +1,59 @@
+[
+    {
+        "title": "Media Organizer + Streamer",
+        "description": "Tag based organization with ability to stream media across a network to any modern browser. Uses FFMPEG to transcode videos into an HLS segmented format to stream and encode asynchronously.",
+        "imagePath": "/src/assets/images/organizer-solid-1024x1024.png",
+        "altText": "Example",
+        "customStyle": "background-color: #75c2f3; object-fit:contain"
+    },
+    {
+        "title": "Gameloggr",
+        "description": "Webapp to track your video game backlog. Serverless API developed using dotnet deployed to AWS Lambda. Data stored in a Postgres database.",
+        "imagePath": "/src/assets/images/db.png",
+        "altText": "Example",
+        "customStyle": "background-color: #8C45F7;"
+    },
+    {
+        "title": "Animal Crossing Critters",
+        "description": "Help keep track and fill out your Animal Crossing New Horizons Critterpedia by using this tracker to see which critters you have captured and see when each critter is available.",
+        "imagePath": "/src/assets/images/animal-crossing.svg",
+        "altText": "Example",
+        "customStyle": "background-color: #54db00",
+        "href": "https://animalcrossing.scavettapps.com"
+    },
+    {
+        "title": "SuperNova: Escape!",
+        "description": "Tap to escape the trailing super nova in this endless arcade classic! Carefully avoid the asteroids floating in space without slowing down... Tap too slowly and the super nova will surly catch up!",
+        "imagePath": "/src/assets/images/supernova.svg",
+        "altText": "Example",
+        "customStyle": "background-color: #1FA7E0"
+    },
+    {
+        "title": "Incrediball",
+        "description": "Incrediball is the most incredible endless rolling ball experience. Steer the ball left and right on randomly generated paths to show your friends that you are truly incrediball.",
+        "imagePath": "/src/assets/images/beach-ball.svg",
+        "altText": "Example",
+        "customStyle": "background-color: wheat"
+    },
+    {
+        "title": "NoiseBean",
+        "description": "Personal Discord bot powered by JDA, Spring Boot, and Spring Data JPA. Its can play music from YouTube or act as a soundboard with uploaded files. It also can run private polls, and keep track game play times to collect statistics that players can later view.",
+        "imagePath": "/src/assets/images/noisebean.png",
+        "altText": "Example",
+        "customStyle": "background-color: #5261F7;"
+    },
+    {
+        "title": "Checkers Minimax",
+        "description": "A full implementation in the Dotnet framework of a playable checkers game against a computer opponent. The artificial intelligence uses the Minimax algorithm to strategize and determine optimal moves based on genetically determined heuristics.",
+        "imagePath": "/src/assets/images/checkers.png",
+        "altText": "Example",
+        "customStyle": "background-color: #e1afaf;"
+    },
+    {
+        "title": "Win32ApiHelper",
+        "description": "This library was created to assist me in some of my other projects where I required the use of windows specific API functions. The main function of this library is the concept of impersonation and launching processes from a windows service.",
+        "imagePath": "/src/assets/images/win32-library.png",
+        "altText": "Example",
+        "customStyle": "background-color: #7384cb;"
+    }
+]

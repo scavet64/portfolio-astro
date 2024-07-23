@@ -4,7 +4,7 @@ import Section from "../components/Section.astro";
 import Card from "../components/Card.astro";
 import ProjectCard from "../components/ProjectCard.astro";
 import SkillLayout from "../components/SkillLayout.astro";
-import { type ProjectMetaData } from "../types";
+import { type ExperienceMetaData, type ProjectMetaData } from "../types";
 
 import { Image } from "astro:assets";
 import logo from "../assets/images/scavettapps-logo.svg";
@@ -40,91 +40,15 @@ const tools = [
 ];
 const others = ["Docker", "FFMPEG", "CUDA", "Git"];
 
-const projectMetadata: ProjectMetaData[] = [
-  {
-    title: "Media Organizer + Streamer",
-    description: `Tag based organization with ability to stream media across a network to any modern browser. Uses FFMPEG to transcode videos into an HLS segmented format to stream and encode asynchronously.`,
-    imagePath: "/src/assets/images/organizer-solid-1024x1024.png",
-    altText: "Example",
-    customStyle: "background-color: #75c2f3; object-fit:contain",
-  },
-  {
-    title: "Gameloggr",
-    description: `Webapp to track your video game backlog. Serverless API developed using dotnet deployed to AWS Lambda. Data stored in a Postgres database.`,
-    imagePath: "/src/assets/images/db.png",
-    altText: "Example",
-    customStyle: "background-color: #8C45F7;",
-  },
-  {
-    title: "Animal Crossing Critters",
-    description: `Help keep track and fill out your Animal Crossing New Horizons Critterpedia by using this tracker to see which critters you have captured and see when each critter is available.`,
-    imagePath: "/src/assets/images/animal-crossing.svg",
-    altText: "Example",
-    customStyle: "background-color: #54db00",
-    href: "https://animalcrossing.scavettapps.com",
-  },
-  {
-    title: "SuperNova: Escape!",
-    description: `Tap to escape the trailing super nova in this endless arcade classic! Carefully avoid the asteroids floating in space without slowing down... Tap too slowly and the super nova will surly catch up!`,
-    imagePath: "/src/assets/images/supernova.svg",
-    altText: "Example",
-    customStyle: "background-color: #1FA7E0",
-  },
-  {
-    title: "Incrediball",
-    description: `Incrediball is the most incredible endless rolling ball experience. Steer the ball left and right on randomly generated paths to show your friends that you are truly incrediball.`,
-    imagePath: "/src/assets/images/beach-ball.svg",
-    altText: "Example",
-    customStyle: "background-color: wheat",
-  },
-  {
-    title: "NoiseBean",
-    description: `Personal Discord bot powered by JDA, Spring Boot, and Spring Data JPA. Its can play music from YouTube or act as a soundboard with uploaded files. It also can run private polls, and keep track game play times to collect statistics that players can later view.`,
-    imagePath: "/src/assets/images/noisebean.png",
-    altText: "Example",
-    customStyle: "background-color: #5261F7;",
-  },
-  {
-    title: "Checkers Minimax",
-    description: `A full implementation in the Dotnet framework of a playable checkers game against a computer opponent. The artificial intelligence uses the Minimax algorithm to strategize and determine optimal moves based on genetically determined heuristics.`,
-    imagePath: "/src/assets/images/checkers.png",
-    altText: "Example",
-    customStyle: "background-color: #e1afaf;",
-  },
-  {
-    title: "Win32ApiHelper",
-    description: `This library was created to assist me in some of my other projects where I required the use of windows specific API functions. The main function of this library is the concept of impersonation and launching processes from a windows service.`,
-    imagePath: "/src/assets/images/win32-library.png",
-    altText: "Example",
-    customStyle: "background-color: #7384cb;",
-  },
-];
+import projectMetadataJson from "../content/project-summaries.json";
+const projectMetadata: ProjectMetaData[] = projectMetadataJson;
 
-const biomemeExperienceBullets: string[] = [
-  `Led development of the backend API, database, and cloud infrustructure for an intuitive online interface enabling employers to schedule medically diagnostic tests for their employees, increasing the overall efficiency for labs and employers.`,
-  `Managed a variety of AWS services, including Lambda, ECS, API Gateway, RDS, IAM, Cognito, CloudWatch, CloudFormation, and S3, to build secure, scalable, and highly available cloud-based solutions for several of our projects.`,
-  `Converted a legacy desktop python app into a modern electron app complete with vite, react, and electron forge to reduce technical debt and increase TTD for product enhancements.`,
-  `Contributed to the development of several React Native (Android) applications responsible for communicating via bluetooth with our custom thermocycling hardware.`,
-  `Improved the user interface and experience of several products based on user interaction and general best practices in UI/UX development`,
-  `Created comprehensive Figma diagrams and mockups, shaping the implementation of new features and User Experience.`,
-  `Automated build and deployment processes using CircleCI, reducing time to deployment and enhancing overall efficiency.`,
-  `Prioritized feature requests and addressed issues by leveraging data from tools like Sentry, CloudWatch, and Snyk.`,
-  `Utilized Jira to manage project tasks, stories, and sprints, ensuring team alignment and effective progress tracking.`,
-  `Provided mentorship, guidance, and knowledge to junior team members, contributing to their professional development.`,
-  `Earned a promotion to Seniority Level III by consistently surpassing role expectations, as recognized by management.`,
-];
+import workExperienceJson from "../content/experience.json";
+const workExperience: ExperienceMetaData[] = workExperienceJson;
 
-const gnostechExperienceBullets: string[] = [
-  `Full stack development on several applications leveraging Java 11, Spring Boot, MySQL, C#, WPF, Angular, and Typescript`,
-  `Led the design, development, and deployment of a microservice oriented architecture built upon DevOps principles utilizing AWS, Docker, Kubernetes, Terraform (Infrastructure as code), Gitlab CI/CD, and Spring Boot Cloud.`,
-  `Created a developer toolkit that significantly increased productivity, resulting in faster development time.`,
-  `Major Contributor and developer to the cloud-based patch management solution deployed and used by the US Navy.`,
-  `Elected member of the User Interface review board to provide feedback and guidance on UI changes`,
-  `Spearheaded the design and development of a help desk management system with video streaming capabilities.`,
-  `Identified and delivered a critical enhancement to the application, greatly improving security and stability.`,
-  `Interviewed and evaluated candidates for the software development team and mentored other members of the team.`,
-  `Maintained a DoD Secret Security Clearance and CompTIA Security+ Certification`,
-];
+const images = import.meta.glob<{ default: ImageMetadata }>(
+  "/src/assets/**/*.{jpeg,jpg,png,gif,svg}"
+);
 ---
 
 <style>
@@ -317,31 +241,23 @@ const gnostechExperienceBullets: string[] = [
     </Section>
 
     <Section id="experience" title="Experience">
-      <Card
-        heading="Software Engineer III"
-        subheading="Biomeme"
-        date="May 2021 - Current"
-        altText="Lorem, ipsum dolor sit"
-        imageClass="h-12 w-auto md:-left-16"
-        imagePath="/src/assets/images/biomeme_inc_logo.jpg"
-      >
-        <ul class="experience-list muted-foreground-color">
-          {biomemeExperienceBullets.map((bullet: string) => <li>{bullet}</li>)}
-        </ul>
-      </Card>
-
-      <Card
-        heading="Software Engineer"
-        subheading="Gnostech"
-        date="Sept 2016 - May 2021"
-        altText="Lorem, ipsum dolor sit"
-        imageClass="h-12 w-auto md:-left-16"
-        imagePath="/src/assets/images/Fy1hsLPD_400x400.jpg"
-      >
-        <ul class="experience-list muted-foreground-color">
-          {gnostechExperienceBullets.map((bullet: string) => <li>{bullet}</li>)}
-        </ul>
-      </Card>
+      {
+        workExperience.map((job) => (
+          <Card
+            heading={job.title}
+            subheading={job.companyName}
+            date={`${job.startDate} - ${job.endDate}`}
+            imagePath={job.image.path}
+            altText={job.image.altText}
+          >
+            <ul class="experience-list muted-foreground-color">
+              {job.bulletPoints.map((bullet: string) => (
+                <li>{bullet}</li>
+              ))}
+            </ul>
+          </Card>
+        ))
+      }
     </Section>
 
     <Section id="skills" title="Skills">
