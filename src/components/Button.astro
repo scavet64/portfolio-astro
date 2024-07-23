@@ -36,10 +36,11 @@ const tagClasses = tagStyles.join(" ");
     font-size: 0.875rem;
     transition: all 0.3s;
     line-height: 1.25rem;
-
-    &:hover {
-      background-color: hsl(var(--input));
-    }
+    color: hsl(var(--foreground));
+  }
+  .tag-button:hover {
+    background-color: hsl(var(--accent));
+    color: hsl(var(--accent-foreground));
   }
 
   .pill {

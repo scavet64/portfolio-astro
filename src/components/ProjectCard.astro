@@ -21,10 +21,11 @@ if (!images[imagePath]) {
   );
 }
 ---
-<style>
-	h1{
-		margin:0px;
-	}
+
+<style lang="css">
+  h1 {
+    margin: 0px;
+  }
   .tag {
     display: flex;
     flex-direction: column;
@@ -34,13 +35,13 @@ if (!images[imagePath]) {
     border-style: solid;
     border-color: hsl(var(--border));
     background-color: hsl(var(--primary-foreground));
-	width: 100%;
+    width: 100%;
 
     &.href {
       transition: all 0.3s;
 
       &:hover {
-        border-color: hsl(var(--foreground)) / 25%;
+        border-color: hsl(var(--accent)) / 25%;
         box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
       }
     }
@@ -48,10 +49,10 @@ if (!images[imagePath]) {
 
   .clickable-tag {
     transition: all 0.3s;
-    &:hover {
-      border-color: hsl(var(--muted-foreground))
-      box-shadow: 0 1px 1px rgba(0, 0, 0, 0.05);
-    }
+  }
+
+  .clickable-tag:hover {
+    border-color: hsl(var(--muted-foreground));
   }
 
   .tag-container {
@@ -59,7 +60,7 @@ if (!images[imagePath]) {
     flex-direction: column;
     row-gap: 0.375rem;
 
-	padding-left: 1.25rem;
+    padding-left: 1.25rem;
     padding-right: 1.25rem;
     padding-top: 0.75rem;
     padding-bottom: 0.75rem;
@@ -87,8 +88,8 @@ if (!images[imagePath]) {
     border-bottom-left-radius: 0;
     border-bottom-right-radius: 0;
     object-fit: contain;
-	background-color: hsl(var(--card));
-	background-color: transparent;
+    background-color: hsl(var(--card));
+    background-color: transparent;
   }
 
   .project-image {
@@ -100,11 +101,10 @@ if (!images[imagePath]) {
   }
 
   a {
-	text-decoration: none;
-	color: hsl(var(--foreground));
+    text-decoration: none;
+    color: hsl(var(--foreground));
   }
 </style>
-
 <Tag class={"tag " + (href ? " clickable-tag" : "")} href={href}>
   <Image
     src={images[imagePath]()}
