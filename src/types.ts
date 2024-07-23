@@ -6,3 +6,8 @@ export type ProjectMetaData = {
 	altText?: string | undefined
     customStyle?: string | undefined
 }
+declare global {
+	interface Window {
+	  dataLayer:any;
+	}
+  }
