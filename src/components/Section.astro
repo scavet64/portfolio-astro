@@ -1,5 +1,5 @@
 ---
-const { class: className, title } = Astro.props;
+const { class: className, title, id } = Astro.props;
 ---
 
 <style>
@@ -16,9 +16,16 @@ const { class: className, title } = Astro.props;
     font-size: 1.25rem;
     line-height: 1.75rem;
     font-weight: 600;
+	/* position: sticky;
+	z-index: 101;
+	top: 1rem;
+	max-width: 250px; */
+	
+	/* background-color: hsl(var(--background)); */
 
     @media (min-width: 768px) {
       width: 33.333333%;
+	  max-width: 33.333333%;
     }
   }
 
@@ -33,7 +40,7 @@ const { class: className, title } = Astro.props;
   }
 </style>
 
-<section class="section-container">
+<section id={id} class="section-container">
   <div class="section-title">
     {title}
   </div>

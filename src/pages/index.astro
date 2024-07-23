@@ -288,7 +288,7 @@ const gnostechExperienceBullets: string[] = [
       </div>
     </section>
 
-    <Section title="About Me">
+    <Section id="about-me" title="About Me">
       <p class="muted-foreground-color about">
         Hello! I'm a full-stack software engineer with over 8 years of
         experience creating secure applications for cloud, desktop, and mobile
@@ -316,7 +316,7 @@ const gnostechExperienceBullets: string[] = [
       </p>
     </Section>
 
-    <Section title="Experience">
+    <Section id="experience" title="Experience">
       <Card
         heading="Software Engineer III"
         subheading="Biomeme"
@@ -344,7 +344,7 @@ const gnostechExperienceBullets: string[] = [
       </Card>
     </Section>
 
-    <Section title="Skills">
+    <Section id="skills" title="Skills">
       <SkillLayout title="Languages" skills={languages} />
       <SkillLayout title="Frontend" skills={frontend} />
       <SkillLayout title="Desktop" skills={desktop} />
@@ -354,7 +354,7 @@ const gnostechExperienceBullets: string[] = [
       <SkillLayout title="Others" skills={others} />
     </Section>
 
-    <Section title="Projects">
+    <Section id="projects" title="Projects">
       <div class="project-container">
         {
           projectMetadata.map((project: ProjectMetaData) => (
@@ -372,7 +372,7 @@ const gnostechExperienceBullets: string[] = [
       </div>
     </Section>
 
-    <Section title="Education">
+    <Section id="education" title="Education">
       <Card
         heading="Masters of Science in Computer Science"
         subheading="Rowan University"
