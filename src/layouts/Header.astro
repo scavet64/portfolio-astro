@@ -1,8 +1,21 @@
 ---
-
+const navLinks = [
+  { id: "#about-me", name: "About" },
+  { id: "#experience", name: "Experience" },
+  { id: "#skills", name: "Skills" },
+  { id: "#projects", name: "Projects" },
+  { id: "#education", name: "Education" },
+];
 ---
 
 <style>
+  .active {
+    /* color: green;
+    background-color: greenyellow; */
+    display: block !important;
+    text-decoration: underline;
+  }
+
   .header {
     display: flex;
     padding-bottom: 0.75rem;
@@ -12,6 +25,14 @@
     font-size: 0.875rem;
     line-height: 1.25rem;
 
+    @media (max-width: 640px) {
+      position: sticky;
+      padding: 15px;
+      top: 0px;
+      left: 0;
+      z-index: 100;
+      background-color: hsl(var(--background));
+    }
     @media (min-width: 640px) {
       flex-wrap: nowrap;
       justify-content: flex-start;
@@ -20,7 +41,6 @@
 
   .nav {
     display: flex;
-    position: relative;
     justify-content: space-between;
     align-items: center;
     width: 100%;
@@ -44,9 +64,6 @@
     column-gap: 1.25rem;
     justify-content: center;
     align-items: center;
-
-    @media (min-width: 640px) {
-    }
   }
 
   .dark-mode-button {
@@ -122,19 +139,74 @@
     width: 1.2rem;
     vertical-align: middle;
   }
+
+  .link-list {
+    display: none;
+  }
+
+  .header-list {
+    display: flex;
+  }
+
+  .title-name {
+    padding-left: 0px;
+    margin: 0;
+  }
 </style>
 <header class="header">
   <nav class="nav" aria-label="global">
-    <a class="resume-link" href="/" aria-label="Brand">Resume</a>
+    <!-- <ul id="navbar" class="title-name">
+      {
+        navLinks.map((link) => (
+          <li class="header-list" key={link.id}>
+            <a class="link-list resume-link" href={`${link.id}`} data-scroll>
+              {link.id}
+            </a>
+          </li>
+        ))
+      }
+    </ul> -->
+    <a class="resume-link" href="/" aria-label="Brand"></a>
+
+    <!-- <ul id="navbar">
+      {
+        navLinks.map((link) => (
+          <li class="header-list" key={link.id}>
+            <a class="link-list" href={`${link.id}`} data-scroll>
+              {link.id}
+            </a>
+          </li>
+        ))
+      }
+    </ul> -->
 
     <div class="link-container">
+      {
+        navLinks.map((link) => (
+          <a
+            href={link.id}
+            class="flex-none text-[1.05rem] font-medium hover:text-foreground/75"
+            aria-label="Nav Menu Item"
+            data-scroll
+          >
+            {link.name}
+          </a>
+        ))
+      }
+
       <!-- <a
-        href="/blog"
+        href="#education"
         class="flex-none text-[1.05rem] font-medium hover:text-foreground/75"
         aria-label="Nav Menu Item"
-        >Blog
+        >Education
       </a>
       <a
+        href="#education"
+        class="flex-none text-[1.05rem] font-medium hover:text-foreground/75"
+        aria-label="Nav Menu Item"
+        >Education
+      </a> -->
+      <!-- <a
         href="/tools"
         class="flex-none text-[1.05rem] font-medium hover:text-foreground/75"
         aria-label="Nav Menu Item"
@@ -182,4 +254,56 @@
     });
     document.dispatchEvent(toggleDarkModeEvent);
   });
+
+  document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
+    anchor.addEventListener("click", function (e) {
+      e.preventDefault();
+
+      document.querySelector(this.getAttribute("href")).scrollIntoView({
+        behavior: "smooth",
+      });
+    });
+  });
+
+  const links = document.querySelectorAll("[data-scroll]");
+
+  links.forEach((link) => {
+    link.addEventListener("click", (e) => {
+      e.preventDefault();
+      document.querySelector(link.getAttribute("href")).scrollIntoView({
+        behavior: "smooth",
+      });
+    });
+  });
+
+  window.addEventListener("scroll", () => {
+    const scrollPos = window.scrollY || document.documentElement.scrollTop;
+
+    links.forEach((link) => {
+      const section = document.querySelector(link.getAttribute("href"));
+
+      console.log("1st", section.offsetTop <= scrollPos + 80)
+      console.log("2nd", section.offsetTop + section.offsetHeight > scrollPos)
+
+      if (
+        section.offsetTop <= scrollPos + 100 &&
+        section.offsetTop + section.offsetHeight - 100 > scrollPos
+      ) {
+        link.classList.add("active");
+      } else {
+        link.classList.remove("active");
+      }
+    });
+  });
+
+  const el = document.querySelector(".header");
+  const observer = new IntersectionObserver(
+    ([e]) => {
+      console.log(e.intersectionRatio);
+      e.target.classList.toggle("is-pinned", e.intersectionRatio < 1);
+    },
+    { threshold: [1] }
+  );
+
+  observer.observe(el);
 </script>
