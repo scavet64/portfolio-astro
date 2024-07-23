@@ -1,4 +1,4 @@
-[![Netlify Status](https://api.netlify.com/api/v1/badges/c9dc4ea2-63f2-4f8d-90b7-aae968eb24c7/deploy-status)](https://app.netlify.com/sites/gatsby-scavettapps/deploys)
+[![Netlify Status](https://api.netlify.com/api/v1/badges/b02cf890-b7a7-445d-a98a-5e4763ca16b7/deploy-status)](https://app.netlify.com/sites/vincent-scavetta-resume/deploys)
 
 # Personal Resume / Portfolio
 
