@@ -14,6 +14,13 @@
         "customStyle": "background-color: #8C45F7;"
     },
     {
+        "title": "NoiseBean",
+        "description": "Personal Discord bot powered by JDA, Spring Boot, and Spring Data JPA. It can play music from YouTube or act as a soundboard with uploaded files. It also can run private polls and keep track of game play times to collect statistics that players can later view.",
+        "imagePath": "/src/assets/images/noisebean.png",
+        "altText": "Example",
+        "customStyle": "background-color: #5261F7;"
+    },
+    {
         "title": "Animal Crossing Critters",
         "description": "Help keep track and fill out your Animal Crossing New Horizons Critterpedia by using this tracker to see which critters you have captured and see when each critter is available.",
         "imagePath": "/src/assets/images/animal-crossing.svg",
@@ -34,13 +41,6 @@
         "imagePath": "/src/assets/images/beach-ball.svg",
         "altText": "Example",
         "customStyle": "background-color: wheat"
-    },
-    {
-        "title": "NoiseBean",
-        "description": "Personal Discord bot powered by JDA, Spring Boot, and Spring Data JPA. Its can play music from YouTube or act as a soundboard with uploaded files. It also can run private polls, and keep track game play times to collect statistics that players can later view.",
-        "imagePath": "/src/assets/images/noisebean.png",
-        "altText": "Example",
-        "customStyle": "background-color: #5261F7;"
     },
     {
         "title": "Checkers Minimax",

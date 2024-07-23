@@ -9,7 +9,7 @@
             "altText": "Company Logo for Biomeme Inc"
         },
         "bulletPoints": [
-            "Led development of the backend API, database, and cloud infrastructure for an intuitive online interface enabling employers to schedule medically diagnostic tests for their employees, increasing the overall efficiency for labs and employers.",
+            "Led development of the backend API, database, and cloud infrastructure for an intuitive online interface enabling employers to schedule medical diagnostic tests for their employees, increasing the overall efficiency for labs and employers.",
             "Managed a variety of AWS services, including Lambda, ECS, API Gateway, RDS, IAM, Cognito, CloudWatch, CloudFormation, and S3, to build secure, scalable, and highly available cloud-based solutions for several of our projects.",
             "Converted a legacy desktop python app into a modern electron app complete with vite, react, and electron forge to reduce technical debt and increase TTD for product enhancements.",
             "Contributed to the development of several React Native (Android) applications responsible for communicating via bluetooth with our custom thermocycling hardware.",
