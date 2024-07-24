@@ -9,15 +9,16 @@
             "altText": "Company Logo for Biomeme Inc"
         },
         "bulletPoints": [
-            "Led development of the backend API, database, and cloud infrastructure for an intuitive online interface enabling employers to schedule medical diagnostic tests for their employees, increasing the overall efficiency for labs and employers.",
-            "Managed a variety of AWS services, including Lambda, ECS, API Gateway, RDS, IAM, Cognito, CloudWatch, CloudFormation, and S3, to build secure, scalable, and highly available cloud-based solutions for several of our projects.",
-            "Converted a legacy desktop python app into a modern electron app complete with vite, react, and electron forge to reduce technical debt and increase TTD for product enhancements.",
-            "Contributed to the development of several React Native (Android) applications responsible for communicating via bluetooth with our custom thermocycling hardware.",
+            "Led the design and implementation of backend APIs, databases, and cloud infrastructure for a HIPAA complaint, FDA emergency use authorized (EUA) online platform that streamlined the scheduling of medical diagnostic tests for the Hollywood entertainment and educational industry, reducing lab and staff workloads by 50%.",
+            "Full stack development on an in vitro diagnostic (IVD) application that communicates via BLE to custom thermocycling hardware that uses AI to detect viral vs bacterial infections to aid in the fight against antimicrobial resistance.",
+            "Cross department development on the next gen isothermal detection system by creating custom software leveraging AI to help identify key DNA and RNA sequences for the most optimal amplification of targets",
+            "Developed an internal cloud app for calculating process capability statistics on locally manufactured products, increasing quality department efficiency by 35% and reducing chances of human error.",
+            "Managed and optimized various AWS services across several applications (Lambda, ECS, EC2, API Gateway, RDS, IAM, Cognito, CloudWatch, CloudFormation, S3), delivering secure, scalable, and highly available cloud-based solutions.",
+            "Transformed a legacy Python app into a modern Electron app with Vite, React, and Forge, significantly reducing tech debt.",
             "Improved the user interface and experience of several products based on user interaction and general best practices in UI/UX development",
             "Created comprehensive Figma diagrams and mockups, shaping the implementation of new features and User Experience.",
             "Automated build and deployment processes using CircleCI, reducing time to deployment and enhancing overall efficiency.",
-            "Prioritized feature requests and addressed issues by leveraging data from tools like Sentry, CloudWatch, and Snyk.",
-            "Utilized Jira to manage project tasks, stories, and sprints, ensuring team alignment and effective progress tracking.",
+            "Prioritized and resolved feature requests & issues using data-driven insights from Sentry, CloudWatch, and Snyk on Jira.",
             "Provided mentorship, guidance, and knowledge to junior team members, contributing to their professional development.",
             "Earned a promotion to Seniority Level III by consistently surpassing role expectations, as recognized by management."
         ]
@@ -32,13 +33,13 @@
             "altText": "Company Logo for Gnostech Inc"
         },
         "bulletPoints": [
+            "Led the design, development, and deployment for transitioning from a single monolithic server to microservice architecture using AWS, Docker, Kubernetes, Terraform (IaC), GitLab CI/CD, and Spring Boot Cloud.",
             "Full stack development on several applications leveraging Java 11, Spring Boot, MySQL, C#, WPF, Angular, and Typescript",
-            "Led the design, development, and deployment of a microservice oriented architecture built upon DevOps principles utilizing AWS, Docker, Kubernetes, Terraform (Infrastructure as code), Gitlab CI/CD, and Spring Boot Cloud.",
-            "Created a developer toolkit that significantly increased productivity, resulting in faster development time.",
-            "Major Contributor and developer to the cloud-based patch management solution deployed and used by the US Navy.",
+            "SME for the cloud-based patch management solution currently deployed worldwide on by the US Navy on aircraft carriers.",
+            "Created a developer toolkit in free time that significantly increased productivity, resulting in faster development time.",
             "Elected member of the User Interface review board to provide feedback and guidance on UI changes",
-            "Spearheaded the design and development of a help desk management system with video streaming capabilities.",
-            "Identified and delivered a critical enhancement to the application, greatly improving security and stability.",
+            "Spearheaded the design and development of a help desk management system with video streaming capabilities decreasing resolution time for fleet issues by 38%",
+            "Identified and implemented a critical security enhancement to the application, completely closing attack vector.",
             "Interviewed and evaluated candidates for the software development team and mentored other members of the team.",
             "Maintained a DoD Secret Security Clearance and CompTIA Security+ Certification"
         ]
